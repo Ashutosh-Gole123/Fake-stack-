@@ -1,0 +1,205 @@
+/* Add your CSS here */
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+#header {
+    background-color: lightgray;
+    border: 2px solid black;
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    grid-area: header;
+}
+
+#header>input {
+    height: 30px;
+}
+
+#main {
+    display: flex;
+    flex-grow: 1;
+}
+
+#col1 {
+    grid-area: col1;
+    width: 250px;
+    border-right: 2px dotted black;
+    color: blue;
+}
+
+#col1>div {
+    text-align: center;
+    padding: 5px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+#col1>div:hover {
+    background-color: lightgray;
+}
+
+#col2 {
+    grid-area: col2;
+    width: 100%;
+}
+
+#questionsGrid,
+.question, #postQuestionInfo, .answer {
+    border-bottom: 2px dotted black;
+}
+
+#questionsGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    padding: 5px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    font-size: 0.9rem;
+}
+
+.question {
+    display: flex;
+    padding: 10px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.question-left {
+    width: 100px;
+    color: #555;
+}
+
+.question-mid {
+    flex: 1;
+    text-align: left;
+}
+
+.question-mid .question-title {
+    color: blue;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.question-mid .tag-list {
+    display: flex;
+    gap: 7px;
+    padding: 5px 0;
+}
+
+.question-mid .tag {
+    display: block;
+    background-color: #5a5a5a;
+    color: white;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px 15px;
+    min-width: 50px;
+    text-align: center;
+
+}
+
+.asker {
+    color: rgb(200, 0, 0);
+}
+
+.answerer {
+    color: rgb(0, 100, 0);
+}
+
+.posted-time {
+    color: #555;
+}
+
+h6 {
+    margin: 5px;
+}
+
+.tagHeadings{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.tagsAndQuestions{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-gap: 10px; /* Optional: gap between items */
+}
+
+.tag{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-style: dashed;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 30px;
+    max-width: 300px;
+    margin-left: 50px;
+}
+
+.tag a{
+    color: rgb(0, 136, 255);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#postTop1, #postTop2, .answer {
+    display: flex;
+    padding: 20px;
+}
+
+#postTop1 > *, #postTop2 > * {
+    width: 150px;
+}
+
+#postQuestionInfo > * > *:nth-child(2) {
+    width: auto;
+    flex: 1;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+#askedInfo, .column-right {
+    font-size: 0.9rem;
+}
+
+.answer-description {
+    flex: 1;
+}
+
+.column-right {
+    width: 150px;
+    padding: 5px;
+}
