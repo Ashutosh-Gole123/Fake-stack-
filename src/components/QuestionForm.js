@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 
-function QuestionForm({model}) {
+function QuestionForm({model,setMode}) {
     const [title, setTitle] = useState('');
     const [text, setText] = useState('');
     const [tags, setTags] = useState('');
@@ -15,7 +15,7 @@ function QuestionForm({model}) {
 
         // Add the question using the model method
         const newQuestion = model.insertQstn(title, text, tagArray, username);
-
+        setMode(0)
         // Optionally, handle success/failure here
         console.log('Question added successfully:', newQuestion);
 

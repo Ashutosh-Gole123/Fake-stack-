@@ -42,7 +42,7 @@ export default function Col2({ model, mode, setMode, renderedQuestions,searchRes
                 case 2:
                     return <SinglePost model={model} qstn={visitedQuestion} onClickSubmit={handleAskAnswerClick} currQue={currQue}/>;
                 case 3:
-                    return <QuestionForm model={model} qstn={visitedQuestion}/>; // Added case to display QuestionForm
+                    return <QuestionForm model={model} qstn={visitedQuestion}setMode={setMode} />; // Added case to display QuestionForm
                 case 4:
                         // Render search results
                         return  <SearchResults model={model} setMode={setMode} setVisitedQuestion={setVisitedQuestion}  searchResults={searchResults}/>

@@ -26,7 +26,7 @@ export default function AllPosts({model, renderedQuestions, setRenderedQuestions
             <div id="questions">
                 <div id="questions">
                     {renderedQuestions.map((qstn) => (
-                        <Question key={qstn.qid} qstn={qstn} visitThisQstn={() => {setVisitedQuestion(qstn); setMode(2)}} onAskAnswerClick={handleSubmit}/>
+                        <Question key={qstn.qid} model={model} qstn={qstn} visitThisQstn={() => {setVisitedQuestion(qstn); setMode(2)}} onAskAnswerClick={handleSubmit}/>
                     ))}
                 </div>
             </div>

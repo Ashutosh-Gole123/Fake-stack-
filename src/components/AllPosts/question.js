@@ -1,9 +1,8 @@
 import Model from "../../models/model"
 import timeToString from "../../modules/timeToString";
 
-const model = new Model();
 
-export default function Question({ qstn, visitThisQstn }) {
+export default function Question({model, qstn, visitThisQstn }) {
     console.log(qstn);
     return (
         <div className="question">
