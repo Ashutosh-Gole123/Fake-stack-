@@ -5,8 +5,9 @@ import SinglePost from './SinglePost/singlePost';
 import QuestionForm from './QuestionForm';
 import SearchResults from './AllPosts/Search';
 import AnswerPosts from './answerPosts';
+import NoResults from './NoResults';
 
-export default function Col2({ model, mode, setMode, renderedQuestions,searchResults , setRenderedQuestions, visitedQuestion, setVisitedQuestion }) {
+export default function Col2({ model, mode, setMode, renderedQuestions,searchResults , setRenderedQuestions, visitedQuestion, setVisitedQuestion,searchInput }) {
     const handleAskQuestionClick = () => {
         setMode(3); // Set mode to 3 to render the question form
     };
@@ -23,6 +24,7 @@ export default function Col2({ model, mode, setMode, renderedQuestions,searchRes
             // If search results are available, change the mode to 4
             setMode(4);
         }
+       
     }, [searchResults, setMode]);
 
     const [question, setQuestion] = useState(null);
@@ -45,10 +47,13 @@ export default function Col2({ model, mode, setMode, renderedQuestions,searchRes
                     return <QuestionForm model={model} qstn={visitedQuestion}setMode={setMode} />; // Added case to display QuestionForm
                 case 4:
                         // Render search results
-                        return  <SearchResults model={model} setMode={setMode} setVisitedQuestion={setVisitedQuestion}  searchResults={searchResults}/>
+                        return  <SearchResults model={model} setMode={setMode} setVisitedQuestion={setVisitedQuestion}  searchResults={searchResults} searchInput={searchInput} />
                 case 5:
                             // Render search results
                     return  <AnswerPosts model={model} qstn={question}/>
+                case 6:
+                            // Render search results
+                    return  <NoResults />
                     default:
                     return null; // Handle default case if needed
             }

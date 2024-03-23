@@ -1,21 +1,15 @@
 import React from 'react';
 
 import timeToString from "../../modules/timeToString";
-import Model from "../../models/model"
-const model = new Model();
 
 
-function SearchResults({ searchResults,model,setMode,setVisitedQuestion }) {
-    const getTagNames = (tagIds) => {
-        return tagIds.map((tagId) => model.getTagById(tagId).name);
-      };
-    const formatDate = (date) => {
-        const options = { year: 'numeric', month: 'long', day: 'numeric' };
-        return new Date(date).toLocaleDateString('en-US', options);
-      };
-  if (!searchResults || searchResults.length === 0) {
+function SearchResults({ searchResults,model,setMode,setVisitedQuestion,searchInput }) {
+    
+  if ((!searchResults || searchResults.length === 0) && searchInput.trim() === '') {
     return <div>No results found.</div>;
   }
+  
+  
   const handleClick = (question) => {
     setVisitedQuestion(question);
     setMode(2);

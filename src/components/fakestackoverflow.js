@@ -10,18 +10,19 @@ export default function FakeStackOverflow() {
   const [renderedQuestions, setRenderedQuestions] = useState(model.getAllQstns());
   const [mode, setMode] = useState(1);
   const [searchResults, setSearchResults] = useState([]);
+  const [searchInput, setSearchInput] = useState('');
 
 
   return (
       <div className="App">
-            <Header setSearchResults={setSearchResults} />
+            <Header setSearchResults={setSearchResults} setSearchInput={setSearchInput} setMode={setMode} />
         <div id="main" className="main">
           <div id="col1">
             <div id="questionsPageClick" onClick={() => {setRenderedQuestions(model.getAllQstns()); setMode(0)}}>Questions</div>
             <div id="tagsPageClick" onClick={() => setMode(1)}>Tags</div>
           </div>
 
-          <Col2 model={model} mode={mode} setMode={setMode} renderedQuestions={renderedQuestions} setRenderedQuestions={setRenderedQuestions} visitedQuestion={visitedQuestion} setVisitedQuestion={setVisitedQuestion} searchResults={searchResults} />
+          <Col2 model={model} mode={mode} setMode={setMode} renderedQuestions={renderedQuestions} setRenderedQuestions={setRenderedQuestions} visitedQuestion={visitedQuestion} setVisitedQuestion={setVisitedQuestion} searchResults={searchResults} searchInput={searchInput} />
         </div>
       </div>
   );
