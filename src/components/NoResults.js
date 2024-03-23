@@ -3,7 +3,7 @@ import React from 'react'
 function NoResults() {
   return (
     
-    <div>No results found.</div>
+    <div>No questions found.</div>
   )
 }
 
